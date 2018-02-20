@@ -1,0 +1,266 @@
+//importando links de less
+@import "vendors/bootstrap/bootstrap.less";
+@import "vendors/font-awesome/font-awesome.less";
+
+@primario: #26a5d3;
+@oscuro: #333333;
+@luz: #f4f4f4;
+@black: #676765;
+
+
+.color-black{
+	color: @black;
+}
+
+html{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: @oscuro;
+	background-color: @luz;
+}
+
+//tipografia
+
+h1, h2, h3, h4, h5, h6{
+	margin: 20px 0 35px;
+	text-transform: uppercase;
+	font-family: "Monserrat","Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;
+}
+
+p{
+	margin: 0 0 25px;
+	font-size: 18px;
+	line-height: 1.6em;
+}
+
+a{
+	color: @primario;
+}
+
+//colocar el cursor sobre el boton
+a:hover, a:focus{
+	text-decoration: none;
+	color: oscuroen(@primario, 20%);
+}
+
+
+//barra de navegacion
+.navbar{
+	margin-bottom: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	text-transform: uppercase;
+	font-family: "Monserrat","Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: @black;
+}
+
+navbar-brand{
+	font-weight: 700;
+}
+
+navbar-brand:focus{
+	outline: none;
+} 
+
+
+.navbar-personalizada a{
+	color: @luz;
+}
+
+.navbar-personalizada .nav li a{
+	-webkit-transition: background .3s ease-in-out;
+	-moz-transition: background .3s ease-in-out;
+	transition: background .3s ease-in-out;
+
+}
+
+
+//compatibilidad de estilos
+.navbar-personalizada .nav li a:hover,
+.navbar-personalizada .nav li a:focus
+.navbar-personalizada .nav li a:active
+{
+	outline: none;
+	backgound-color: rgba(255, 255, 255, 0.4);
+
+}
+
+.navbar-toggle{
+	padding: 4px 6px;
+	font-size: 16px;
+	color: @luz;
+}
+
+.navbar-toggle:focus
+.navbar-toggle:active{	
+	outline: none;
+}
+
+
+//compatibiliad con otras resoluciones
+@media(min-width:767px){
+	
+	.navbar{
+		padding: 20px 0;
+		border-bottom: none;
+		letter-spacing: 1px;
+		background: transparent;
+		-webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+		-moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+		transition: background .5s ease-in-out, padding .5s ease-in-out;
+	}
+
+
+	//poder navegar con la animacion con jquery
+	.colapsar-nav{
+		padding: 0;
+		background-color: @black;
+	}
+
+	.navbar-personalizada.colapsar-nav{
+		border-bottom: 1px solid rgba(111, 187, 16, 0.4);
+	}
+
+}
+
+//crear la imagen para que el menu quede arriba
+//pagina 
+.intro{
+	display: table;
+	width: 100%;
+	height: auto;
+	padding: 100px 0;
+	text-align: center;
+	color: @luz;
+	//background: url("../img/superbowl51.jpg") no-repeat bottom center scroll;
+	//background-color:@oscuro; //por si no carga la imagen 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+//estilos
+.intro-cuerpo{
+	display: table-cell;
+	vertical-align: middle;	
+}
+
+.texto-bienvenidos{
+	font-size: 40px;
+}
+
+.intro-texto{
+	font-size: 20px;
+}
+
+#myCarousel {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+}
+
+@media(min-width:767px){
+	.intro{
+		height: 100%;
+		padding: 0;
+	}
+
+	.texto-bienvenidos{
+		font-size: 100px;
+	}
+
+	.intro-texto{
+		font-size: 25px;
+	}
+}
+
+//contenido de seccion
+.contenido-seccion{
+	padding: 70px 0 40px 0;
+}
+
+
+//Para los ICONOS
+.icono-bloque-izquierdo{
+	overflow:auto;
+
+	h1, h2, h3, h4, h5, h6{
+		margin: 0 0 10px 0;
+		padding: 0;
+		font-size: 20px;
+	}
+
+	.contenido-icono{
+		float: left;
+		width: 70%;
+	}
+
+	.icono{
+		float: left;
+		width: 30%;
+		margin-top: 10px;
+	}
+}
+
+
+//PAra la Seccion servicios
+
+.seccion-servicios{
+	width: 100%;
+	padding: 50px 0;
+	color: @luz;
+	background: url("../img/gaga.jpg") no-repeat bottom center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+@media(min-width:767px){
+	.seccion-servicios{
+		padding: 100px 0;
+	}
+}
+
+
+
+//seccion clientes
+
+#clientes{
+	text-align: center;
+	padding-bottom:80px;
+
+	img{
+		margin-right:30px;
+	}
+}
+
+//seccion contacto
+
+#contacto{
+	background: @oscuro;
+	color: @luz;
+	padding-bottom: 80px;
+}
+
+//footer
+
+footer{
+	margin-top: 10px;
+	padding-top: 30px;
+	height: 80px;
+	text-align: center;
+}
+
+.pagina-scroll{
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 1s;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-duration: 1s;
+}
